@@ -1,0 +1,57 @@
+import { Ionicons } from '@expo/vector-icons';
+import { useNavigation, useRoute } from '@react-navigation/native';
+import React from 'react';
+import { Alert, StyleSheet, Text, View } from 'react-native';
+import { AnimalForm } from '../components/AnimalForm';
+import { AnimalService } from '../services/AnimalService';
+import { Animal } from '../types/Animal';
+
+export default function RegisterFoundAnimalScreen() {
+  const navigation = useNavigation();
+  const route = useRoute();
+  const animal = (route.params as { animal?: Animal })?.animal;
+
+  const handleSubmit = async (data: Animal) => {
+    try {
+      if (animal?.id) {
+        await AnimalService.update('found_animals', animal.id, data);
+        Alert.alert('Animal atualizado!');
+      } else {
+        await AnimalService.create('found_animals', data);
+        Alert.alert('Animal cadastrado!');
+      }
+      navigation.goBack();
+    } catch (e) {
+      Alert.alert('Erro ao salvar');
+    }
+  };
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <Ionicons name="paw" size={30} color="#f57c00" />
+        <Text style={styles.title}>{animal ? 'Editar Animal Encontrado' : 'Cadastrar Animal Encontrado'}</Text>
+      </View>
+      <AnimalForm onSubmit={handleSubmit} initialData={animal} />
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    padding: 16,
+  },
+  header: {
+    alignItems: 'center',
+    marginBottom: 12,
+  },
+  title: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: '#f57c00',
+    marginTop: 4,
+    textAlign: 'center',
+  },
+});
