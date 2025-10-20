@@ -33,7 +33,7 @@ export default function RegisterScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.title}>PetFinder</Text>
+        <Text style={styles.title}>AdoPet</Text>
         <Text style={styles.subtitle}>Crie sua conta</Text>
       </View>
 
@@ -60,7 +60,7 @@ export default function RegisterScreen() {
 
         <TouchableOpacity
           onPress={() => navigation.goBack()}
-          style={[styles.button, { marginTop: 10, backgroundColor: '#f57c00cc' }]}
+          style={[styles.button, { marginTop: 10, backgroundColor: '#31BAA9' }]}
         >
           <Text style={styles.buttonText}>VOLTAR</Text>
         </TouchableOpacity>
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 32,
     fontWeight: 'bold',
-    color: '#f57c00',
+    color: '#31BAA9',
   },
   subtitle: {
     fontSize: 16,
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   button: {
-    backgroundColor: '#f57c00',
+    backgroundColor: '#4685EE',
     padding: 14,
     borderRadius: 8,
     justifyContent: 'center',

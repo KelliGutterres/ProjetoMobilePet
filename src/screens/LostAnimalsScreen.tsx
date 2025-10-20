@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     marginBottom: 16,
-    color: '#f57c00',
+    color: '#31BAA9',
   },
   filterContainer: {
     paddingHorizontal: 16,
@@ -176,7 +176,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 20,
     right: 20,
-    backgroundColor: '#f57c00',
+    backgroundColor: '#31BAA9',
     borderRadius: 30,
     padding: 16,
     elevation: 4,

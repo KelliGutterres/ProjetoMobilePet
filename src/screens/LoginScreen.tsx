@@ -27,7 +27,7 @@ export default function LoginScreen() {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.paw}>🐾</Text>
-        <Text style={styles.title}>PetFinder</Text>
+        <Text style={styles.title}>AdoPet</Text>
       </View>
 
       <View style={styles.form}>
@@ -52,7 +52,7 @@ export default function LoginScreen() {
         </TouchableOpacity>
 
         <TouchableOpacity
-          style={[styles.button, { marginTop: 10, backgroundColor: '#f57c00cc' }]}
+          style={[styles.button, { marginTop: 10, backgroundColor: '#31BAA9' }]}
           onPress={() => navigation.navigate('Register' as never)}
         >
           <Text style={styles.buttonText}>🐾 CADASTRAR</Text>
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 32,
     fontWeight: 'bold',
-    color: '#f57c00',
+    color: '#31BAA9',
     marginTop: 8,
   },
   form: {
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   button: {
-    backgroundColor: '#f57c00',
+    backgroundColor: '#4685EE',
     padding: 14,
     borderRadius: 8,
     alignItems: 'center',

@@ -10,8 +10,8 @@ export default function HomeScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Ionicons name="paw" size={32} color="#f57c00" />
-        <Text style={styles.title}>PetFinder</Text>
+        <Ionicons name="paw" size={32} color="#31BAA9" />
+        <Text style={styles.title}>AdoPet</Text>
       </View>
 
       <View style={styles.tabBar}>
@@ -22,7 +22,7 @@ export default function HomeScreen() {
             selectedTab === 'lost' && styles.tabButtonActive,
           ]}
         >
-          <Ionicons name="paw" size={20} color={selectedTab === 'lost' ? '#fff' : '#f57c00'} />
+          <Ionicons name="paw" size={20} color={selectedTab === 'lost' ? '#fff' : '#31BAA9'} />
           <Text style={selectedTab === 'lost' ? styles.tabLabelActive : styles.tabLabel}>
             Perdidos
           </Text>
@@ -35,7 +35,7 @@ export default function HomeScreen() {
             selectedTab === 'found' && styles.tabButtonActive,
           ]}
         >
-          <Ionicons name="search" size={20} color={selectedTab === 'found' ? '#fff' : '#f57c00'} />
+          <Ionicons name="search" size={20} color={selectedTab === 'found' ? '#fff' : '#31BAA9'} />
           <Text style={selectedTab === 'found' ? styles.tabLabelActive : styles.tabLabel}>
             Encontrados
           </Text>
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 26,
     fontWeight: 'bold',
-    color: '#f57c00',
+    color: '#31BAA9',
     marginTop: 4,
   },
   tabBar: {
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     backgroundColor: '#fff3e0',
     borderBottomWidth: 1,
-    borderColor: '#fbc02d',
+    borderColor: '#31BAA9',
   },
   tabButton: {
     flexDirection: 'row',
@@ -83,12 +83,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   tabButtonActive: {
-    backgroundColor: '#f57c00',
+    backgroundColor: '#31BAA9',
   },
   tabLabel: {
     marginLeft: 6,
     fontSize: 14,
-    color: '#f57c00',
+    color: '#31BAA9',
   },
   tabLabelActive: {
     marginLeft: 6,

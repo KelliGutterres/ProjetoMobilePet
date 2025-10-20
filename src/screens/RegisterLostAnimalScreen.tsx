@@ -29,7 +29,7 @@ export default function RegisterLostAnimalScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Ionicons name="paw" size={30} color="#f57c00" />
+        <Ionicons name="paw" size={30} color="#31BAA9" />
         <Text style={styles.title}>{animal ? 'Editar Animal Perdido' : 'Cadastrar Animal Perdido'}</Text>
       </View>
       <AnimalForm onSubmit={handleSubmit} initialData={animal} />
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 22,
     fontWeight: 'bold',
-    color: '#f57c00',
+    color: '#31BAA9',
     marginTop: 4,
     textAlign: 'center',
   },
