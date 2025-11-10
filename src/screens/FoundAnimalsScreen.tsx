@@ -1,7 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import React, { useEffect, useState } from 'react';
-import { Alert, FlatList, Image, StyleSheet, Text, TextInput, TouchableOpacity, View, } from 'react-native';
+import { Alert, FlatList, Image, Linking, StyleSheet, Text, TextInput, TouchableOpacity, View, } from 'react-native';
 import { Menu } from 'react-native-paper';
 import { AnimalService } from '../services/AnimalService';
 import { Animal } from '../types/Animal';
@@ -34,6 +34,8 @@ export default function FoundAnimalsScreen() {
   const filteredAnimals = animals.filter((animal) =>
     animal.location?.toLowerCase().includes(filtroLocation.toLowerCase())
   );
+  const whatsappUrl =
+    'https://wa.me/5551995528190?text=Ol%C3%A1!%20Quero%20adotar%20um%20pet%20%F0%9F%90%BE';
 
   return (
     <View style={styles.container}>
@@ -94,6 +96,17 @@ export default function FoundAnimalsScreen() {
                 />
               </Menu>
             </View>
+            {/* Conversar button */}
+            <TouchableOpacity
+              style={styles.chatButton}
+              onPress={() =>
+                Linking.openURL(whatsappUrl).catch(() =>
+                  Alert.alert('Não foi possível abrir o WhatsApp')
+                )
+              }
+            >
+              <Text style={styles.chatButtonText}>Conversar</Text>
+            </TouchableOpacity>
           </View>
         )}
       />
@@ -172,5 +185,17 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     padding: 16,
     elevation: 4,
+  },
+  chatButton: {
+    alignSelf: 'flex-end',
+    marginTop: 8,
+    backgroundColor: '#31BAA9',
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    borderRadius: 8,
+  },
+  chatButtonText: {
+    color: 'white',
+    fontWeight: '600',
   },
 });

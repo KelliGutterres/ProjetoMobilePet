@@ -30,24 +30,24 @@ export default function App() {
           <Drawer.Screen
             name="RegisterFound"
             component={RegisterFoundAnimalScreen}
-            options={{ drawerLabel: () => null, title: null, drawerItemStyle: { height: 0 } }}
+            options={{ drawerLabel: () => null, drawerItemStyle: { height: 0 } }}
           />
           <Drawer.Screen
             name="RegisterLost"
             component={RegisterLostAnimalScreen}
-            options={{ drawerLabel: () => null, title: null, drawerItemStyle: { height: 0 } }}
+            options={{ drawerLabel: () => null, drawerItemStyle: { height: 0 } }}
           />
 
           {}
           <Drawer.Screen
             name="Login"
             component={LoginScreen}
-            options={{ drawerLabel: () => null, title: null, drawerItemStyle: { height: 0 } }}
+            options={{ drawerLabel: () => null, drawerItemStyle: { height: 0 } }}
           />
           <Drawer.Screen
             name="Register"
             component={RegisterScreen}
-            options={{ drawerLabel: () => null, title: null, drawerItemStyle: { height: 0 } }}
+            options={{ drawerLabel: () => null, drawerItemStyle: { height: 0 } }}
           />
         </Drawer.Navigator>
       </NavigationContainer>

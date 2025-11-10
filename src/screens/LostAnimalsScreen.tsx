@@ -5,6 +5,7 @@ import {
   Alert,
   FlatList,
   Image,
+  Linking,
   StyleSheet,
   Text,
   TextInput,
@@ -43,6 +44,8 @@ export default function LostAnimalsScreen() {
   const filteredAnimals = animals.filter((animal) =>
     animal.location?.toLowerCase().includes(filtroLocation.toLowerCase())
   );
+  const whatsappUrl =
+    'https://wa.me/5551995528190?text=Ol%C3%A1!%20Quero%20adotar%20um%20pet%20%F0%9F%90%BE';
 
   return (
     <View style={styles.container}>
@@ -102,6 +105,17 @@ export default function LostAnimalsScreen() {
                 />
               </Menu>
             </View>
+            {/* Conversar button */}
+            <TouchableOpacity
+              style={styles.chatButton}
+              onPress={() =>
+                Linking.openURL(whatsappUrl).catch(() =>
+                  Alert.alert('Não foi possível abrir o WhatsApp')
+                )
+              }
+            >
+              <Text style={styles.chatButtonText}>Conversar</Text>
+            </TouchableOpacity>
           </View>
         )}
       />
@@ -180,5 +194,17 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     padding: 16,
     elevation: 4,
+  },
+  chatButton: {
+    alignSelf: 'flex-end',
+    marginTop: 8,
+    backgroundColor: '#31BAA9',
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    borderRadius: 8,
+  },
+  chatButtonText: {
+    color: 'white',
+    fontWeight: '600',
   },
 });
